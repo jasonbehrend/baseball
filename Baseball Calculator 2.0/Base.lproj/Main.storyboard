@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,77 +18,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="YKQ-UA-St0">
-                                <rect key="frame" x="158" y="49" width="308" height="433"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Log on or Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7i-Bw-QuC">
-                                        <rect key="frame" x="0.0" y="0.0" width="308" height="47"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@yahoo.com" textAlignment="natural" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="DFv-HJ-zry" userLabel="email@yahoo.com">
-                                        <rect key="frame" x="84" y="112" width="140" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="139" id="0Qb-E4-yzP"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="SbH-FM-HtY"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="0Qb-E4-yzP"/>
-                                            </mask>
-                                        </variation>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="3qh-Kr-7xQ" userLabel="email@yahoo.com">
-                                        <rect key="frame" x="84" y="207" width="140" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="x1H-a6-VgE"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="natural" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="eGD-Kk-xQW" userLabel="email@yahoo.com">
-                                        <rect key="frame" x="84" y="302" width="140" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="S7z-NI-boO"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBZ-0R-iqx">
-                                        <rect key="frame" x="91" y="397" width="125" height="36"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="125" id="NPV-eX-IkO"/>
-                                            <constraint firstAttribute="height" constant="36" id="um0-9G-jhK"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <size key="titleShadowOffset" width="2" height="2"/>
-                                        <state key="normal" title="Continue">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="53d-Ow-aBQ">
+                                <rect key="frame" x="7" y="37" width="600" height="612"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZp-31-8DO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="67"/>
+                                <color key="backgroundColor" red="0.38581143186116124" green="0.58458922017759973" blue="0.4696454554403004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="vGF-fI-TC6"/>
+                                    <constraint firstAttribute="width" constant="600" id="xQM-lC-yld"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@yahoo.com" textAlignment="natural" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="DFv-HJ-zry" userLabel="email@yahoo.com">
+                                <rect key="frame" x="212" y="147" width="176" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Uca-GS-3dL"/>
+                                    <constraint firstAttribute="width" constant="176" id="lAM-eI-Ifq"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="3qh-Kr-7xQ" userLabel="email@yahoo.com">
+                                <rect key="frame" x="212" y="196" width="176" height="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBZ-0R-iqx">
+                                <rect key="frame" x="219" y="246" width="162" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="JuW-S7-xUI"/>
+                                    <constraint firstAttribute="width" constant="162" id="kq7-vT-Mr8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title="Login / Sign Up">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YKQ-UA-St0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="BOk-Ph-Ik3"/>
-                            <constraint firstItem="YKQ-UA-St0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mgc-PC-s5x"/>
+                            <constraint firstItem="53d-Ow-aBQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="3qc-vW-oYr"/>
+                            <constraint firstItem="yBZ-0R-iqx" firstAttribute="centerX" secondItem="3qh-Kr-7xQ" secondAttribute="centerX" id="6W0-d5-UGD"/>
+                            <constraint firstItem="DFv-HJ-zry" firstAttribute="top" secondItem="zZp-31-8DO" secondAttribute="bottom" constant="55" id="8Ih-7h-1QA"/>
+                            <constraint firstItem="DFv-HJ-zry" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9vi-7d-qEe"/>
+                            <constraint firstItem="zZp-31-8DO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="A61-wc-UUq"/>
+                            <constraint firstItem="zZp-31-8DO" firstAttribute="centerX" secondItem="DFv-HJ-zry" secondAttribute="centerX" id="FOn-Vw-9gy"/>
+                            <constraint firstAttribute="bottom" secondItem="zZp-31-8DO" secondAttribute="bottom" constant="533" id="KXY-6m-C48"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="53d-Ow-aBQ" secondAttribute="bottom" constant="-49" id="T5Y-5q-eT6"/>
+                            <constraint firstAttribute="trailing" secondItem="zZp-31-8DO" secondAttribute="trailing" id="UyY-to-Ry2"/>
+                            <constraint firstItem="3qh-Kr-7xQ" firstAttribute="top" secondItem="DFv-HJ-zry" secondAttribute="bottom" constant="19" id="WBH-gX-Jq9"/>
+                            <constraint firstItem="53d-Ow-aBQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-13" id="Z3h-Xp-Cba"/>
+                            <constraint firstItem="3qh-Kr-7xQ" firstAttribute="centerX" secondItem="DFv-HJ-zry" secondAttribute="centerX" id="ci4-3N-9Ke"/>
+                            <constraint firstItem="zZp-31-8DO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gZV-dB-XDg"/>
+                            <constraint firstItem="zZp-31-8DO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hXB-RK-Whg"/>
+                            <constraint firstItem="yBZ-0R-iqx" firstAttribute="top" secondItem="3qh-Kr-7xQ" secondAttribute="bottom" constant="20" id="hzV-8z-KFt"/>
+                            <constraint firstItem="zZp-31-8DO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="i1J-wa-HLb"/>
+                            <constraint firstItem="3qh-Kr-7xQ" firstAttribute="width" secondItem="DFv-HJ-zry" secondAttribute="width" id="mMV-Ue-U7Y"/>
+                            <constraint firstItem="DFv-HJ-zry" firstAttribute="top" secondItem="zZp-31-8DO" secondAttribute="bottom" constant="80" id="reK-Cq-Bcj"/>
+                            <constraint firstItem="3qh-Kr-7xQ" firstAttribute="height" secondItem="DFv-HJ-zry" secondAttribute="height" id="uhx-zZ-1jy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="53d-Ow-aBQ" secondAttribute="trailing" constant="-27" id="v4h-wQ-REH"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FOn-Vw-9gy"/>
+                                <exclude reference="KXY-6m-C48"/>
+                                <exclude reference="gZV-dB-XDg"/>
+                                <exclude reference="hXB-RK-Whg"/>
+                                <exclude reference="8Ih-7h-1QA"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -95,4 +106,7 @@
             <point key="canvasLocation" x="408" y="323"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="800" height="800"/>
+    </resources>
 </document>
