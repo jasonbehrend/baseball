@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="width" constant="600" id="xQM-lC-yld"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@yahoo.com" textAlignment="natural" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="DFv-HJ-zry" userLabel="email@yahoo.com">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email" borderStyle="roundedRect" placeholder="email@yahoo.com" textAlignment="natural" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="DFv-HJ-zry" userLabel="email@yahoo.com">
                                 <rect key="frame" x="212" y="147" width="176" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Uca-GS-3dL"/>
@@ -100,6 +100,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="emailText" destination="DFv-HJ-zry" id="KpA-gq-SDH"/>
+                        <outlet property="passwordText" destination="3qh-Kr-7xQ" id="uTE-OW-Pk0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
