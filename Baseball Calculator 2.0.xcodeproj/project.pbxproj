@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8907DA8A1C65869E00743DC3 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8907DA891C65869E00743DC3 /* MaterialView.swift */; };
+		8907DA8D1C6586F100743DC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8907DA8C1C6586F100743DC3 /* Constants.swift */; };
 		89907E0D1C6025DE00563F75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89907E0C1C6025DE00563F75 /* AppDelegate.swift */; };
 		89907E0F1C6025DE00563F75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89907E0E1C6025DE00563F75 /* ViewController.swift */; };
 		89907E121C6025DE00563F75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89907E101C6025DE00563F75 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8907DA891C65869E00743DC3 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		8907DA8C1C6586F100743DC3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		89907E091C6025DE00563F75 /* Baseball Calculator 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baseball Calculator 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89907E0C1C6025DE00563F75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89907E0E1C6025DE00563F75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8907DA861C6585FE00743DC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8907DA891C65869E00743DC3 /* MaterialView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8907DA871C65863000743DC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8907DA881C65863C00743DC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				89907E0E1C6025DE00563F75 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		8907DA8B1C6586D600743DC3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8907DA8C1C6586F100743DC3 /* Constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		89907E001C6025DE00563F75 = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +132,11 @@
 		89907E0B1C6025DE00563F75 /* Baseball Calculator 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				8907DA8B1C6586D600743DC3 /* Util */,
+				8907DA881C65863C00743DC3 /* Controller */,
+				8907DA871C65863000743DC3 /* Model */,
+				8907DA861C6585FE00743DC3 /* View */,
 				89907E0C1C6025DE00563F75 /* AppDelegate.swift */,
-				89907E0E1C6025DE00563F75 /* ViewController.swift */,
 				89907E101C6025DE00563F75 /* Main.storyboard */,
 				89907E131C6025DE00563F75 /* Assets.xcassets */,
 				89907E151C6025DE00563F75 /* LaunchScreen.storyboard */,
@@ -259,8 +297,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8907DA8A1C65869E00743DC3 /* MaterialView.swift in Sources */,
 				89907E0F1C6025DE00563F75 /* ViewController.swift in Sources */,
 				89907E0D1C6025DE00563F75 /* AppDelegate.swift in Sources */,
+				8907DA8D1C6586F100743DC3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +527,7 @@
 				89907E331C6025DE00563F75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89907E341C6025DE00563F75 /* Build configuration list for PBXNativeTarget "Baseball Calculator 2.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +536,7 @@
 				89907E361C6025DE00563F75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89907E371C6025DE00563F75 /* Build configuration list for PBXNativeTarget "Baseball Calculator 2.0UITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +545,7 @@
 				89907E391C6025DE00563F75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

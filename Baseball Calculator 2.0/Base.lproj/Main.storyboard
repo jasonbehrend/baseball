@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="width" constant="600" id="xQM-lC-yld"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email" borderStyle="roundedRect" placeholder="email@yahoo.com" textAlignment="natural" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="DFv-HJ-zry" userLabel="email@yahoo.com">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="DFv-HJ-zry" userLabel="email@yahoo.com">
                                 <rect key="frame" x="212" y="147" width="176" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Uca-GS-3dL"/>
@@ -65,6 +65,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="UZq-CP-iTP" kind="show" id="kuy-YC-Gbl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -108,6 +111,107 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="408" y="323"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ttb-U9-VrJ">
+            <objects>
+                <viewController id="UZq-CP-iTP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ynS-Bh-upy"/>
+                        <viewControllerLayoutGuide type="bottom" id="2mf-3m-kJC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n7q-36-ltK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9G-uX-6NB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="131"/>
+                                <color key="backgroundColor" red="0.31764705882352939" green="0.51764705882352946" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="Mqf-pu-LmU"/>
+                                    <constraint firstAttribute="width" constant="600" id="UIE-pK-pla"/>
+                                    <constraint firstAttribute="width" constant="600" id="ZSf-nr-F1b"/>
+                                    <constraint firstAttribute="height" constant="131" id="jx2-Ha-0yU"/>
+                                    <constraint firstAttribute="height" constant="131" id="vVi-b9-eLj"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Mqf-pu-LmU"/>
+                                        <exclude reference="UIE-pK-pla"/>
+                                        <exclude reference="vVi-b9-eLj"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYS-ah-CSY" customClass="MaterialView" customModule="Baseball_Calculator_2_0" customModuleProvider="target">
+                                <rect key="frame" x="175" y="78" width="250" height="155"/>
+                                <color key="backgroundColor" red="0.34432265252276772" green="0.81409738793821984" blue="0.60610422313805712" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="407" id="1Ku-8v-svr"/>
+                                    <constraint firstAttribute="width" constant="316" id="1WS-Ng-B0u"/>
+                                    <constraint firstAttribute="width" constant="250" id="Isr-n2-HMh"/>
+                                    <constraint firstAttribute="height" constant="155" id="SNw-Pg-ByP"/>
+                                    <constraint firstAttribute="height" constant="155" id="YP2-8L-Q7b"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1Ku-8v-svr"/>
+                                        <exclude reference="1WS-Ng-B0u"/>
+                                        <exclude reference="YP2-8L-Q7b"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bYS-ah-CSY" firstAttribute="top" secondItem="ynS-Bh-upy" secondAttribute="bottom" constant="42" id="9la-I0-ZTE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bYS-ah-CSY" secondAttribute="trailing" id="9vO-bF-AVG"/>
+                            <constraint firstItem="O9G-uX-6NB" firstAttribute="top" secondItem="n7q-36-ltK" secondAttribute="top" id="QpW-g0-Mb8"/>
+                            <constraint firstItem="O9G-uX-6NB" firstAttribute="leading" secondItem="n7q-36-ltK" secondAttribute="leading" id="RF9-aS-5SI"/>
+                            <constraint firstAttribute="trailing" secondItem="O9G-uX-6NB" secondAttribute="trailing" id="RU3-be-pjU"/>
+                            <constraint firstItem="bYS-ah-CSY" firstAttribute="leading" secondItem="n7q-36-ltK" secondAttribute="leadingMargin" constant="76" id="Rbn-DV-rEO"/>
+                            <constraint firstItem="O9G-uX-6NB" firstAttribute="top" secondItem="n7q-36-ltK" secondAttribute="top" id="Tjl-tb-PN5"/>
+                            <constraint firstAttribute="trailing" secondItem="O9G-uX-6NB" secondAttribute="trailing" id="YzU-HY-kQm"/>
+                            <constraint firstItem="bYS-ah-CSY" firstAttribute="leading" secondItem="n7q-36-ltK" secondAttribute="leadingMargin" constant="122" id="bd7-EC-07t"/>
+                            <constraint firstAttribute="trailing" secondItem="O9G-uX-6NB" secondAttribute="trailing" id="dSx-Uj-bPF"/>
+                            <constraint firstItem="bYS-ah-CSY" firstAttribute="top" secondItem="ynS-Bh-upy" secondAttribute="bottom" constant="58" id="dTN-54-yRn"/>
+                            <constraint firstItem="bYS-ah-CSY" firstAttribute="centerX" secondItem="n7q-36-ltK" secondAttribute="centerX" id="g95-zV-FS3"/>
+                            <constraint firstItem="O9G-uX-6NB" firstAttribute="top" secondItem="n7q-36-ltK" secondAttribute="top" id="gE7-73-L71"/>
+                            <constraint firstItem="bYS-ah-CSY" firstAttribute="top" secondItem="ynS-Bh-upy" secondAttribute="bottom" id="iX2-JU-wYQ"/>
+                            <constraint firstItem="bYS-ah-CSY" firstAttribute="leading" secondItem="n7q-36-ltK" secondAttribute="leadingMargin" id="oR7-MF-69d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bYS-ah-CSY" secondAttribute="trailing" constant="122" id="qar-5m-c0Q"/>
+                            <constraint firstItem="2mf-3m-kJC" firstAttribute="top" secondItem="O9G-uX-6NB" secondAttribute="bottom" constant="469" id="s2u-9U-Rgv"/>
+                            <constraint firstItem="O9G-uX-6NB" firstAttribute="leading" secondItem="n7q-36-ltK" secondAttribute="leading" id="she-Vm-5pl"/>
+                            <constraint firstItem="2mf-3m-kJC" firstAttribute="top" secondItem="bYS-ah-CSY" secondAttribute="bottom" constant="383" id="vdQ-EA-adb"/>
+                            <constraint firstItem="bYS-ah-CSY" firstAttribute="centerX" secondItem="O9G-uX-6NB" secondAttribute="centerX" id="wN3-wy-UHU"/>
+                            <constraint firstItem="bYS-ah-CSY" firstAttribute="top" secondItem="ynS-Bh-upy" secondAttribute="bottom" constant="58" id="zjM-ga-XeW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="QpW-g0-Mb8"/>
+                                <exclude reference="RU3-be-pjU"/>
+                                <exclude reference="Tjl-tb-PN5"/>
+                                <exclude reference="dSx-Uj-bPF"/>
+                                <exclude reference="she-Vm-5pl"/>
+                                <exclude reference="9la-I0-ZTE"/>
+                                <exclude reference="9vO-bF-AVG"/>
+                                <exclude reference="Rbn-DV-rEO"/>
+                                <exclude reference="bd7-EC-07t"/>
+                                <exclude reference="iX2-JU-wYQ"/>
+                                <exclude reference="oR7-MF-69d"/>
+                                <exclude reference="qar-5m-c0Q"/>
+                                <exclude reference="wN3-wy-UHU"/>
+                                <exclude reference="zjM-ga-XeW"/>
+                                <exclude reference="s2u-9U-Rgv"/>
+                                <exclude reference="vdQ-EA-adb"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QcW-5f-IvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1225" y="323"/>
         </scene>
     </scenes>
     <resources>
