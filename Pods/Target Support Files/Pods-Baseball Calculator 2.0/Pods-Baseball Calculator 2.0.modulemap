@@ -1,0 +1,6 @@
+framework module Pods_Baseball_Calculator_2_0 {
+  umbrella header "Pods-Baseball Calculator 2.0-umbrella.h"
+
+  export *
+  module * { export * }
+}

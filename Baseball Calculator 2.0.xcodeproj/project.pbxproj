@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		8907DA8A1C65869E00743DC3 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8907DA891C65869E00743DC3 /* MaterialView.swift */; };
 		8907DA8D1C6586F100743DC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8907DA8C1C6586F100743DC3 /* Constants.swift */; };
+		89539C761C715D2A006E6259 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89539C751C715D2A006E6259 /* DataService.swift */; };
+		89539C781C716161006E6259 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89539C771C716161006E6259 /* LoginViewController.swift */; };
+		89539C7B1C7162EF006E6259 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89539C791C7162EF006E6259 /* Main.storyboard */; };
 		89907E0D1C6025DE00563F75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89907E0C1C6025DE00563F75 /* AppDelegate.swift */; };
-		89907E0F1C6025DE00563F75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89907E0E1C6025DE00563F75 /* ViewController.swift */; };
-		89907E121C6025DE00563F75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89907E101C6025DE00563F75 /* Main.storyboard */; };
 		89907E141C6025DE00563F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89907E131C6025DE00563F75 /* Assets.xcassets */; };
 		89907E171C6025DE00563F75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89907E151C6025DE00563F75 /* LaunchScreen.storyboard */; };
 		89907E221C6025DE00563F75 /* Baseball_Calculator_2_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89907E211C6025DE00563F75 /* Baseball_Calculator_2_0Tests.swift */; };
 		89907E2D1C6025DE00563F75 /* Baseball_Calculator_2_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89907E2C1C6025DE00563F75 /* Baseball_Calculator_2_0UITests.swift */; };
+		E0CF2EA911ABE14C4B1F0A2E /* Pods_Baseball_Calculator_2_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CED6A7B5B04F26E5262F45E /* Pods_Baseball_Calculator_2_0.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CED6A7B5B04F26E5262F45E /* Pods_Baseball_Calculator_2_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Baseball_Calculator_2_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8907DA891C65869E00743DC3 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		8907DA8C1C6586F100743DC3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		89539C751C715D2A006E6259 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		89539C771C716161006E6259 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		89539C7A1C7162EF006E6259 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89907E091C6025DE00563F75 /* Baseball Calculator 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baseball Calculator 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89907E0C1C6025DE00563F75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89907E0E1C6025DE00563F75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		89907E111C6025DE00563F75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89907E131C6025DE00563F75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89907E161C6025DE00563F75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89907E181C6025DE00563F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		89907E281C6025DE00563F75 /* Baseball Calculator 2.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Baseball Calculator 2.0UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89907E2C1C6025DE00563F75 /* Baseball_Calculator_2_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baseball_Calculator_2_0UITests.swift; sourceTree = "<group>"; };
 		89907E2E1C6025DE00563F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6CFE222D08680F263E2597A /* Pods-Baseball Calculator 2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baseball Calculator 2.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Baseball Calculator 2.0/Pods-Baseball Calculator 2.0.debug.xcconfig"; sourceTree = "<group>"; };
+		CFF516728A400F7AC6DEA168 /* Pods-Baseball Calculator 2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baseball Calculator 2.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-Baseball Calculator 2.0/Pods-Baseball Calculator 2.0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0CF2EA911ABE14C4B1F0A2E /* Pods_Baseball_Calculator_2_0.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1039E43C29AB26BD63C8E2D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A6CFE222D08680F263E2597A /* Pods-Baseball Calculator 2.0.debug.xcconfig */,
+				CFF516728A400F7AC6DEA168 /* Pods-Baseball Calculator 2.0.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6E8D99417DEFCF936F5BF502 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0CED6A7B5B04F26E5262F45E /* Pods_Baseball_Calculator_2_0.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8907DA861C6585FE00743DC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,7 +120,7 @@
 		8907DA881C65863C00743DC3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				89907E0E1C6025DE00563F75 /* ViewController.swift */,
+				89539C771C716161006E6259 /* LoginViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -109,6 +133,14 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		89539C741C715D01006E6259 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				89539C751C715D2A006E6259 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		89907E001C6025DE00563F75 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +148,8 @@
 				89907E201C6025DE00563F75 /* Baseball Calculator 2.0Tests */,
 				89907E2B1C6025DE00563F75 /* Baseball Calculator 2.0UITests */,
 				89907E0A1C6025DE00563F75 /* Products */,
+				1039E43C29AB26BD63C8E2D8 /* Pods */,
+				6E8D99417DEFCF936F5BF502 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,12 +166,13 @@
 		89907E0B1C6025DE00563F75 /* Baseball Calculator 2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				89539C741C715D01006E6259 /* Services */,
 				8907DA8B1C6586D600743DC3 /* Util */,
 				8907DA881C65863C00743DC3 /* Controller */,
 				8907DA871C65863000743DC3 /* Model */,
 				8907DA861C6585FE00743DC3 /* View */,
 				89907E0C1C6025DE00563F75 /* AppDelegate.swift */,
-				89907E101C6025DE00563F75 /* Main.storyboard */,
+				89539C791C7162EF006E6259 /* Main.storyboard */,
 				89907E131C6025DE00563F75 /* Assets.xcassets */,
 				89907E151C6025DE00563F75 /* LaunchScreen.storyboard */,
 				89907E181C6025DE00563F75 /* Info.plist */,
@@ -170,9 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89907E311C6025DE00563F75 /* Build configuration list for PBXNativeTarget "Baseball Calculator 2.0" */;
 			buildPhases = (
+				E4195203B5D1619D291A7369 /* Check Pods Manifest.lock */,
 				89907E051C6025DE00563F75 /* Sources */,
 				89907E061C6025DE00563F75 /* Frameworks */,
 				89907E071C6025DE00563F75 /* Resources */,
+				D128CE834104FCF3C0B13852 /* Embed Pods Frameworks */,
+				E9D5DE9F9D2B9594993A53D5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,9 +308,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89539C7B1C7162EF006E6259 /* Main.storyboard in Resources */,
 				89907E171C6025DE00563F75 /* LaunchScreen.storyboard in Resources */,
 				89907E141C6025DE00563F75 /* Assets.xcassets in Resources */,
-				89907E121C6025DE00563F75 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,15 +330,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D128CE834104FCF3C0B13852 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Baseball Calculator 2.0/Pods-Baseball Calculator 2.0-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4195203B5D1619D291A7369 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E9D5DE9F9D2B9594993A53D5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Baseball Calculator 2.0/Pods-Baseball Calculator 2.0-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		89907E051C6025DE00563F75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89539C781C716161006E6259 /* LoginViewController.swift in Sources */,
 				8907DA8A1C65869E00743DC3 /* MaterialView.swift in Sources */,
-				89907E0F1C6025DE00563F75 /* ViewController.swift in Sources */,
 				89907E0D1C6025DE00563F75 /* AppDelegate.swift in Sources */,
 				8907DA8D1C6586F100743DC3 /* Constants.swift in Sources */,
+				89539C761C715D2A006E6259 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,10 +423,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		89907E101C6025DE00563F75 /* Main.storyboard */ = {
+		89539C791C7162EF006E6259 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				89907E111C6025DE00563F75 /* Base */,
+				89539C7A1C7162EF006E6259 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -440,6 +527,7 @@
 		};
 		89907E321C6025DE00563F75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6CFE222D08680F263E2597A /* Pods-Baseball Calculator 2.0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Baseball Calculator 2.0/Info.plist";
@@ -451,6 +539,7 @@
 		};
 		89907E331C6025DE00563F75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFF516728A400F7AC6DEA168 /* Pods-Baseball Calculator 2.0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Baseball Calculator 2.0/Info.plist";
