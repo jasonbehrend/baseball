@@ -25,7 +25,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         
+        if DataService.ds.REF_BASE.authData != nil {
+            self.performSegueWithIdentifier(SEGUE_LOGGEDIN, sender: nil)
+        }
         
     }
     
