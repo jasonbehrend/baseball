@@ -23,3 +23,5 @@ let STATUS_NETWORK_ERROR = -15
 
 //keys
 let KEY_UID = "uid"
+let KEY_CURRENT_BATTER = "current_batter_name"
+let KEY_ALL_BATTERS = "key_all_batters"
