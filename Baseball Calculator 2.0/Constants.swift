@@ -13,6 +13,7 @@ let SHADOW_COLOR: CGFloat = 157.0 / 255.0
 
 // segues
 let SEGUE_LOGGEDIN = "loggedIn"
+let SEGUE_ADDAB = "AddAB"
 
 // login status codes
 

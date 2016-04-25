@@ -11,6 +11,13 @@ import Firebase
 
 let URL_BASE = "https://battingstats.firebaseio.com"
 
+let NEW_BATTER_STATS_DICT = [
+    "singles": 0,
+    "doubles": 0,
+    "triples": 0,
+    "homeruns": 0
+]
+
 class DataService {
     static let ds = DataService()
     
@@ -26,7 +33,20 @@ class DataService {
         return _REF_USERS
     }
 
-    func createFirebaseUser(uid: String, user: Dictionary <String, String>){
+    func createFirebaseUser(uid: String, user: Dictionary <String, String>) {
         REF_USERS.childByAppendingPath(uid).setValue(user)
     }
+    
+    func createFirebaseBatter(uid: String, name: String) {
+        
+        REF_USERS.childByAppendingPath(uid).childByAppendingPath("Batters").childByAppendingPath(name).setValue(NEW_BATTER_STATS_DICT)
+    }
+    
+    func removeFirebaseBatter(name: String) {
+        if let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String {
+            REF_USERS.childByAppendingPath(uid).childByAppendingPath("Batters").childByAppendingPath(name).removeValue()
+        }
+    }
+    
+    
 }

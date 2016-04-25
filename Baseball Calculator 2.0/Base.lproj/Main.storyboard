@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -157,7 +157,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="kPK-Jz-bCQ" kind="show" id="DSY-d9-8WU"/>
+                                            <segue destination="kPK-Jz-bCQ" kind="show" identifier="AddAB" id="DSY-d9-8WU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chZ-vp-8Wm">
@@ -380,10 +380,10 @@
             </objects>
             <point key="canvasLocation" x="1201" y="335"/>
         </scene>
-        <!--View Controller-->
+        <!--Add At Bat View Controller-->
         <scene sceneID="fZb-5k-QnK">
             <objects>
-                <viewController id="kPK-Jz-bCQ" sceneMemberID="viewController">
+                <viewController id="kPK-Jz-bCQ" customClass="AddAtBatViewController" customModule="Baseball_Calculator_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vfa-vM-7dm"/>
                         <viewControllerLayoutGuide type="bottom" id="ggQ-2U-3wq"/>
@@ -432,6 +432,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                         <state key="normal" title="1B"/>
+                                                        <connections>
+                                                            <action selector="addSingle:" destination="kPK-Jz-bCQ" eventType="touchUpInside" id="u9H-Ku-Wde"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pes-Zz-86I">
                                                         <rect key="frame" x="0.0" y="122" width="66" height="72"/>
@@ -442,6 +445,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                         <state key="normal" title="2B"/>
+                                                        <connections>
+                                                            <action selector="addDouble:" destination="kPK-Jz-bCQ" eventType="touchUpInside" id="CNM-AJ-wiH"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7QV-Wk-0YA">
                                                         <rect key="frame" x="0.0" y="244" width="66" height="72"/>
@@ -452,6 +458,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                         <state key="normal" title="3B"/>
+                                                        <connections>
+                                                            <action selector="addTriple:" destination="kPK-Jz-bCQ" eventType="touchUpInside" id="0rc-GZ-oWD"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgM-8i-GDH">
                                                         <rect key="frame" x="0.0" y="366" width="66" height="72"/>
@@ -462,6 +471,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                         <state key="normal" title="HR"/>
+                                                        <connections>
+                                                            <action selector="addHomeRun:" destination="kPK-Jz-bCQ" eventType="touchUpInside" id="bHZ-y5-KtW"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>

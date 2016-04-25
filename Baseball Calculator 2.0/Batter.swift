@@ -35,14 +35,27 @@ class Batter {
         return _homeruns
     }
     
+    func addSingle() {
+        self._singles = self._singles + 1
+    }
+    
+    func addDouble() {
+        self._doubles = self._doubles + 1
+    }
+    
+    func addTriple() {
+        self._triples = self._triples + 1
+    }
+    
+    func addHomeRun() {
+        self._homeruns = self._homeruns + 1
+    }
+    
     init(name: String, stats: Dictionary<String, AnyObject>) {
         self._name = name
         
         if let singles = stats["singles"] as? Int {
             self._singles = singles
-        }
-        else {
-            self._singles = 99
         }
         
         if let doubles = stats["doubles"] as? Int {
@@ -57,6 +70,15 @@ class Batter {
             self._homeruns = homeruns
         }
         
+    }
+    
+    init(name: String) {
+        self._name = name
+        
+        self._singles = 0
+        self._doubles = 0
+        self._triples = 0
+        self._homeruns = 0
     }
     
 }

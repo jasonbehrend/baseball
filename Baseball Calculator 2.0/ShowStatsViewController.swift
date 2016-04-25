@@ -16,6 +16,7 @@ class ShowStatsViewController: UIViewController {
     var currentBatterName: String?
     
     var batterNames = [String]()
+    var currentBatter: Batter?
     
     @IBOutlet weak var singlesLabel: UILabel!
     @IBOutlet weak var doublesLabel: UILabel!
@@ -26,56 +27,34 @@ class ShowStatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSUserDefaults.standardUserDefaults().setValue("ad313d21-6bb5-43b4-a8b4-67137e19381d", forKey: KEY_UID)
-        
-        
         if let batterArray = NSUserDefaults.standardUserDefaults().arrayForKey(KEY_ALL_BATTERS){
-            //print("I got the array")
+            print("I got the array")
             batterNames = batterArray as! [String]
         }
         
-        else{
-            //print("I couldn't get the array.")
+        else {
+            print("I couldn't get the array.")
         }
         
-        
-        if let key = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String {
+        if let batter_name = NSUserDefaults.standardUserDefaults().valueForKey(KEY_CURRENT_BATTER) as? String {
+            print("Name is set: \(batter_name)")
+            currentNameLabel.text = batter_name
+            currentBatterName = batter_name
             
-            DataService.ds.REF_USERS.childByAppendingPath(key).childByAppendingPath("Batters").observeEventType(.Value, withBlock: {
+            getFirebaseData(batter_name)
             
-                snapshot in
-                
-                if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
-                    
-                    for snap in snapshots {
-                        print(snap)
-                        print("current Batter \(self.currentBatterName)")
-                        
-                        // check if this snap represents our current batter
-                        if snap.key == self.currentBatterName {
-                            if let stats = snap.value as? Dictionary<String, AnyObject> {
-                                let currentBatter = Batter(name: snap.key, stats: stats)
-                                self.updateLabels(currentBatter)
-                            }
-                        }
-                    }
-                    
-                }
-            
-            })
         }
+
         else {
             print("no key")
         }
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(animated: Bool) {
-       
-        if let batter_key = NSUserDefaults.standardUserDefaults().valueForKey(KEY_CURRENT_BATTER) as? String {
-            print("Name is set")
-            currentNameLabel.text = batter_key
+        
+        if let _ = currentBatterName {
+
         }
             
         else {
@@ -98,28 +77,43 @@ class ShowStatsViewController: UIViewController {
         })
         
         let action = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            
             let textField = alert.textFields![0] as UITextField
             //print("Textfield: \(textField.text)")
             
+            // TODO: Be Sure A Name Was Entered - we don't want to create a new batter with an empty string
+            
             // CREATE A NEW FIREBASE BATTER
+            if let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String {
+                
+                print(uid)
+                DataService.ds.createFirebaseBatter(uid, name: textField.text!)
+                
+                self.currentNameLabel.text = textField.text
+                self.currentBatterName = textField.text
+                self.batterNames.append(textField.text!)
+                self.currentBatter = Batter(name: textField.text!)
+                self.getFirebaseData(textField.text!)
+                
+                NSUserDefaults.standardUserDefaults().setValue(textField.text, forKey: KEY_CURRENT_BATTER)
+                NSUserDefaults.standardUserDefaults().setObject(self.batterNames, forKey: KEY_ALL_BATTERS)
+                
+            }
             
-            self.currentNameLabel.text = textField.text
-            self.currentBatterName = textField.text
-            self.batterNames.append(textField.text!)
-            self.getFirebaseData(self.currentBatterName!)
-            NSUserDefaults.standardUserDefaults().setValue(textField.text, forKey: KEY_CURRENT_BATTER)
-            NSUserDefaults.standardUserDefaults().setObject(self.batterNames, forKey: KEY_ALL_BATTERS)
-            
-            // test code to get array out of nsuserdefaults
-            // let myarray = NSUserDefaults.standardUserDefaults().arrayForKey(KEY_ALL_BATTERS)
         })
         
+        let cancelButton = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
         alert.addAction(action)
+        alert.addAction(cancelButton)
         presentViewController(alert, animated: true, completion: nil)
 
     }
 
     @IBAction func userOptionsButton(sender: AnyObject) {
+        
+        // TODO: rename this function to something that makes more sense
+        //   will need to unconnect it from storyboard first, then reconnect with new name
         
         let myActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         let cancelButton = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -133,14 +127,12 @@ class ShowStatsViewController: UIViewController {
         myActionSheet.addAction(addBatterButton)
         
         for batter in batterNames {
-//            print(batter)
             
             let batterButton = UIAlertAction(title: batter, style: .Default, handler: {
                 (batterButton) -> Void in
                 
-                self.currentBatterName = batter
-                self.currentNameLabel.text = batter
-                self.getFirebaseData(batter)
+                self.showOrDelete(batter)
+
             })
             
             myActionSheet.addAction(batterButton)
@@ -153,33 +145,25 @@ class ShowStatsViewController: UIViewController {
     }
     
     func getFirebaseData(batter: String) {
+        
         if let key = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String {
-
-            DataService.ds.REF_USERS.childByAppendingPath(key).childByAppendingPath("Batters").observeEventType(.Value, withBlock: {
+            
+            DataService.ds.REF_USERS.childByAppendingPath(key).childByAppendingPath("Batters").childByAppendingPath(batter).observeEventType(.Value, withBlock: {
                 
                 snapshot in
                 
-                if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                if let stats = snapshot.value as? Dictionary<String, AnyObject> {
                     
-                    for snap in snapshots {
-                        
-                        // check if this snap represents our current batter
-                        if snap.key == self.currentBatterName {
-                            print(snap)
-                            if let stats = snap.value as? Dictionary<String, AnyObject> {
-                                let currentBatter = Batter(name: snap.key, stats: stats)
-                                self.updateLabels(currentBatter)
-                            }
-                        }
-                    }
+                    self.currentBatter = Batter(name: snapshot.key, stats: stats)
+                    self.updateLabels(self.currentBatter!)
+                    self.currentBatterName = self.currentBatter!.name
                     
                 }
                 
             })
+            
         }
-        else {
-            print("no key")
-        }
+        
     }
     
     
@@ -189,6 +173,84 @@ class ShowStatsViewController: UIViewController {
         triplesLabel.text = String(batter.triples)
         homerunsLabel.text = String(batter.homeruns)
         
+    }
+    
+    func showOrDelete (batter: String) {
+        let showOrDeleteAlert = UIAlertController(title: "Show or Delete", message: "Do you want to show or delete this batter?", preferredStyle: .Alert)
+        
+        let showButton = UIAlertAction(title: "Show", style: .Default, handler:{
+            (showButton) in
+            
+            self.currentBatterName = batter
+            self.currentNameLabel.text = batter
+            self.getFirebaseData(batter)
+            NSUserDefaults.standardUserDefaults().setValue(batter, forKey: KEY_CURRENT_BATTER)
+        })
+        
+        
+        let deleteButton = UIAlertAction(title: "Delete", style: .Default, handler: {
+            (batterButton) -> Void in
+            
+            let indexOfBatter = self.batterNames.indexOf(batter)
+            
+            if self.batterNames.endIndex == 1 {
+                
+                // TODO: don't change the batter unless it is the same one you deleted.
+            
+                print("Only one batter in the array")
+                let oneBatterAlert = UIAlertController(title: "This Is The Only Batter", message: "You can't delete the only batter", preferredStyle: .Alert)
+                
+                let okButton = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                
+                oneBatterAlert.addAction(okButton)
+                self.presentViewController(oneBatterAlert, animated: true, completion: nil)
+
+                
+                
+            }
+            
+            else {
+                
+                // delete from array in this app
+                self.batterNames.removeAtIndex(indexOfBatter!)
+                
+                // delete form Firebase
+                DataService.ds.removeFirebaseBatter(batter)
+                
+                // delete from NSUserDefaults
+                NSUserDefaults.standardUserDefaults().setObject(self.batterNames, forKey: KEY_ALL_BATTERS)
+                
+                
+                // set current batter to the first person in the list
+                self.currentBatterName = self.batterNames[0]
+                
+                // set NSUserDefaults current batter to above
+                NSUserDefaults.standardUserDefaults().setValue(self.currentBatterName, forKey: KEY_CURRENT_BATTER)
+                print("I set the NSUser to \(self.currentBatterName)")
+
+                
+                // update the labels
+                self.currentNameLabel.text = self.currentBatterName
+                self.getFirebaseData(self.currentBatterName!)
+                
+
+                
+            }
+            
+            
+        })
+        
+        showOrDeleteAlert.addAction(showButton)
+        showOrDeleteAlert.addAction(deleteButton)
+        presentViewController(showOrDeleteAlert, animated: true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == SEGUE_ADDAB {
+            if let destinationVC = segue.destinationViewController as? AddAtBatViewController {
+                destinationVC.batter = currentBatter
+            }
+        }
     }
 
 }

@@ -22,7 +22,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
     }
@@ -62,7 +62,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     */
     @IBAction func login(sender: AnyObject) {
-        //print("Login Called")
+        print("Login Called")
         
         if let email = emailTextField.text where email != "", let pwd = passwordTextField.text where pwd != "" {
             DataService.ds.REF_BASE.authUser(email, password: pwd, withCompletionBlock: { error, authData in
