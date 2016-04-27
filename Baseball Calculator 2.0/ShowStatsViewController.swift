@@ -211,6 +211,10 @@ class ShowStatsViewController: UIViewController {
             
             else {
                 
+//                print("The batter to be deleted is \(batter)")
+//                print("The current batter is \(self.currentBatter!.name)")
+                
+                
                 // delete from array in this app
                 self.batterNames.removeAtIndex(indexOfBatter!)
                 
@@ -221,17 +225,20 @@ class ShowStatsViewController: UIViewController {
                 NSUserDefaults.standardUserDefaults().setObject(self.batterNames, forKey: KEY_ALL_BATTERS)
                 
                 
-                // set current batter to the first person in the list
-                self.currentBatterName = self.batterNames[0]
+                // only change the current batter if that is who you're deleting
+                if batter == self.currentBatter!.name{
                 
-                // set NSUserDefaults current batter to above
-                NSUserDefaults.standardUserDefaults().setValue(self.currentBatterName, forKey: KEY_CURRENT_BATTER)
-                print("I set the NSUser to \(self.currentBatterName)")
+                    // set current batter to the first person in the list
+                    self.currentBatterName = self.batterNames[0]
+                
+                    // set NSUserDefaults current batter to above
+                    NSUserDefaults.standardUserDefaults().setValue(self.currentBatterName, forKey: KEY_CURRENT_BATTER)
+                    print("I set the NSUser to \(self.currentBatterName)")
 
                 
-                // update the labels
-                self.currentNameLabel.text = self.currentBatterName
-                self.getFirebaseData(self.currentBatterName!)
+                    // update the labels
+                    self.currentNameLabel.text = self.currentBatterName
+                    self.getFirebaseData(self.currentBatterName!)}
                 
 
                 
