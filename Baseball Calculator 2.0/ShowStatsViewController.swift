@@ -78,26 +78,45 @@ class ShowStatsViewController: UIViewController {
         
         let action = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             
-            let textField = alert.textFields![0] as UITextField
-            //print("Textfield: \(textField.text)")
+                let textField = alert.textFields![0] as UITextField
+                //print("Textfield: \(textField.text)")
             
-            // TODO: Be Sure A Name Was Entered - we don't want to create a new batter with an empty string
+            // TODO: if the batter name entered is already in the list, make them change it for clarification
             
-            // CREATE A NEW FIREBASE BATTER
-            if let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String {
+            if textField.text != "" {
+                // Be Sure A Name Was Entered - we don't want to create a new batter with     an empty string
+
+                    // CREATE A NEW FIREBASE BATTER
+                    if let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String {
                 
-                print(uid)
-                DataService.ds.createFirebaseBatter(uid, name: textField.text!)
+                        print(uid)
+                        DataService.ds.createFirebaseBatter(uid, name: textField.text!)
                 
-                self.currentNameLabel.text = textField.text
-                self.currentBatterName = textField.text
-                self.batterNames.append(textField.text!)
-                self.currentBatter = Batter(name: textField.text!)
-                self.getFirebaseData(textField.text!)
+                        self.currentNameLabel.text = textField.text
+                        self.currentBatterName = textField.text
+                        self.batterNames.append(textField.text!)
+                        self.currentBatter = Batter(name: textField.text!)
+                        self.getFirebaseData(textField.text!)
+                        
+                        NSUserDefaults.standardUserDefaults().setValue(textField.text, forKey: KEY_CURRENT_BATTER)
+                        NSUserDefaults.standardUserDefaults().setObject(self.batterNames, forKey: KEY_ALL_BATTERS)
+                    }
                 
-                NSUserDefaults.standardUserDefaults().setValue(textField.text, forKey: KEY_CURRENT_BATTER)
-                NSUserDefaults.standardUserDefaults().setObject(self.batterNames, forKey: KEY_ALL_BATTERS)
+            }
+            
+                else {
+                    // if there is no batter inserted, gice the user an alert
+                    
+                    let noNameAlert = UIAlertController(title: "No Name Was Entered.", message: nil, preferredStyle: .Alert)
+                    
+                    let okButton = UIAlertAction(title: "OK", style: .Default, handler: nil)
                 
+                    
+                    self.presentViewController(noNameAlert, animated: true, completion: nil)
+                    noNameAlert.addAction(okButton)
+
+
+
             }
             
         })
@@ -110,10 +129,7 @@ class ShowStatsViewController: UIViewController {
 
     }
 
-    @IBAction func userOptionsButton(sender: AnyObject) {
-        
-        // TODO: rename this function to something that makes more sense
-        //   will need to unconnect it from storyboard first, then reconnect with new name
+    @IBAction func chooseBatter(sender: AnyObject) {
         
         let myActionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         let cancelButton = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -194,8 +210,6 @@ class ShowStatsViewController: UIViewController {
             let indexOfBatter = self.batterNames.indexOf(batter)
             
             if self.batterNames.endIndex == 1 {
-                
-                // TODO: don't change the batter unless it is the same one you deleted.
             
                 print("Only one batter in the array")
                 let oneBatterAlert = UIAlertController(title: "This Is The Only Batter", message: "You can't delete the only batter", preferredStyle: .Alert)

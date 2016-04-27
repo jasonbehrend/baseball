@@ -163,7 +163,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chZ-vp-8Wm">
                                         <rect key="frame" x="172" y="8" width="257" height="70"/>
                                         <connections>
-                                            <action selector="userOptionsButton:" destination="UZq-CP-iTP" eventType="touchUpInside" id="peB-hu-1mR"/>
+                                            <action selector="chooseBatter:" destination="UZq-CP-iTP" eventType="touchUpInside" id="ESh-Di-XY4"/>
                                         </connections>
                                     </button>
                                 </subviews>
