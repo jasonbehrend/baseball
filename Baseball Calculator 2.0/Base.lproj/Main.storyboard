@@ -369,10 +369,12 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="avgLabel" destination="fPI-eW-EH8" id="4Jk-ew-nHu"/>
                         <outlet property="currentNameLabel" destination="rNx-Ny-16n" id="l8v-tJ-a0J"/>
                         <outlet property="doublesLabel" destination="o4n-XY-pp2" id="ep5-hW-j3v"/>
                         <outlet property="homerunsLabel" destination="pow-Ub-bJN" id="4NH-C4-O4Z"/>
                         <outlet property="singlesLabel" destination="I40-tq-e9C" id="1jr-in-jbb"/>
+                        <outlet property="slgLabel" destination="xSq-4s-Cb9" id="mAz-Vy-hnv"/>
                         <outlet property="triplesLabel" destination="awr-pp-6U9" id="Ges-DQ-pUh"/>
                     </connections>
                 </viewController>
@@ -524,6 +526,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                         <state key="normal" title="FO"/>
+                                                        <connections>
+                                                            <action selector="addOut:" destination="kPK-Jz-bCQ" eventType="touchUpInside" id="Y3h-oX-a7H"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTd-ZR-eb8">
                                                         <rect key="frame" x="0.0" y="182" width="72" height="72"/>
@@ -534,16 +539,23 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                         <state key="normal" title="GO"/>
+                                                        <connections>
+                                                            <action selector="addOut:" destination="kPK-Jz-bCQ" eventType="touchUpInside" id="aK3-Q5-Fet"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzT-7S-qpW">
                                                         <rect key="frame" x="0.0" y="364" width="72" height="72"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="NVy-CA-noe"/>
                                                             <constraint firstAttribute="height" constant="72" id="Qvf-M3-cP8"/>
                                                             <constraint firstAttribute="width" constant="72" id="nuP-91-aso"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                         <state key="normal" title="K"/>
+                                                        <connections>
+                                                            <action selector="addOut:" destination="kPK-Jz-bCQ" eventType="touchUpInside" id="9UU-Xk-3Dy"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -603,6 +615,9 @@
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         <state key="normal" title="ROE"/>
+                                                                        <connections>
+                                                                            <action selector="addOut:" destination="kPK-Jz-bCQ" eventType="touchUpInside" id="U37-2X-tbQ"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39w-Yg-shY">
                                                                         <rect key="frame" x="0.0" y="154" width="65" height="42"/>

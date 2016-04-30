@@ -38,8 +38,6 @@ class AddAtBatViewController: UIViewController {
 
     @IBAction func addSingle(sender: AnyObject) {
         
-        print(batter!.name)
-        
         if let currentBatter = batter {
             
             if let key = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String {
@@ -102,6 +100,25 @@ class AddAtBatViewController: UIViewController {
                 
                 currentBatter.addHomeRun()
                 
+            }
+            
+        }
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    @IBAction func addOut(sender: AnyObject) {
+        
+        if let currentBatter = batter {
+            
+            if let key = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String {
+                
+                DataService.ds.REF_USERS.childByAppendingPath(key).childByAppendingPath("Batters").childByAppendingPath(currentBatter.name).childByAppendingPath("outs").setValue(currentBatter.outs + 1)
+                
+                currentBatter.addOut()
+                
+                print("There are \(currentBatter.outs) outs")
             }
             
         }

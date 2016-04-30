@@ -29,6 +29,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(animated: Bool) {
         
+        
         if DataService.ds.REF_BASE.authData != nil {
             self.performSegueWithIdentifier(SEGUE_LOGGEDIN, sender: nil)
         }

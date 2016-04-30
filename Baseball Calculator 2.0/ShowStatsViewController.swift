@@ -18,6 +18,8 @@ class ShowStatsViewController: UIViewController {
     var batterNames = [String]()
     var currentBatter: Batter?
     
+    @IBOutlet weak var slgLabel: UILabel!
+    @IBOutlet weak var avgLabel: UILabel!
     @IBOutlet weak var singlesLabel: UILabel!
     @IBOutlet weak var doublesLabel: UILabel!
     @IBOutlet weak var triplesLabel: UILabel!
@@ -41,6 +43,9 @@ class ShowStatsViewController: UIViewController {
             currentNameLabel.text = batter_name
             currentBatterName = batter_name
             
+            
+            // call getFirebaseData with batter_name to create a Batter object
+            // getFirebaseData then calls update labels with the stats from Firebase
             getFirebaseData(batter_name)
             
         }
@@ -52,6 +57,7 @@ class ShowStatsViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
         
         if let _ = currentBatterName {
 
@@ -184,10 +190,15 @@ class ShowStatsViewController: UIViewController {
     
     
     func updateLabels (batter: Batter) {
+        
         singlesLabel.text = String(batter.singles)
         doublesLabel.text = String(batter.doubles)
         triplesLabel.text = String(batter.triples)
         homerunsLabel.text = String(batter.homeruns)
+        avgLabel.text = batter.avg()
+        slgLabel.text = batter.slg()
+
+
         
     }
     
@@ -254,10 +265,7 @@ class ShowStatsViewController: UIViewController {
                     self.currentNameLabel.text = self.currentBatterName
                     self.getFirebaseData(self.currentBatterName!)}
                 
-
-                
             }
-            
             
         })
         
