@@ -373,6 +373,7 @@
                         <outlet property="currentNameLabel" destination="rNx-Ny-16n" id="l8v-tJ-a0J"/>
                         <outlet property="doublesLabel" destination="o4n-XY-pp2" id="ep5-hW-j3v"/>
                         <outlet property="homerunsLabel" destination="pow-Ub-bJN" id="4NH-C4-O4Z"/>
+                        <outlet property="obpLabel" destination="JDP-1y-eYC" id="MJN-JG-Drn"/>
                         <outlet property="singlesLabel" destination="I40-tq-e9C" id="1jr-in-jbb"/>
                         <outlet property="slgLabel" destination="xSq-4s-Cb9" id="mAz-Vy-hnv"/>
                         <outlet property="triplesLabel" destination="awr-pp-6U9" id="Ges-DQ-pUh"/>
@@ -605,6 +606,9 @@
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         <state key="normal" title="BB"/>
+                                                                        <connections>
+                                                                            <action selector="addFreeBase:" destination="kPK-Jz-bCQ" eventType="touchUpInside" id="P6S-hS-4U3"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nky-Mg-MAr">
                                                                         <rect key="frame" x="0.0" y="77" width="65" height="42"/>
@@ -628,6 +632,9 @@
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         <state key="normal" title="HBP"/>
+                                                                        <connections>
+                                                                            <action selector="addFreeBase:" destination="kPK-Jz-bCQ" eventType="touchUpInside" id="gDs-b4-cxQ"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65e-cw-NZk">
                                                                         <rect key="frame" x="0.0" y="231" width="65" height="42"/>
@@ -638,6 +645,9 @@
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         <state key="normal" title="Sac B"/>
+                                                                        <connections>
+                                                                            <action selector="addSacrafice:" destination="kPK-Jz-bCQ" eventType="touchUpInside" id="7SL-NL-KfZ"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYS-lQ-n0r">
                                                                         <rect key="frame" x="0.0" y="308" width="65" height="42"/>
@@ -648,6 +658,9 @@
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         <state key="normal" title="Sac F"/>
+                                                                        <connections>
+                                                                            <action selector="addSacrafice:" destination="kPK-Jz-bCQ" eventType="touchUpInside" id="8gm-lY-Fgb"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3p-8N-ZHb">
                                                                         <rect key="frame" x="0.0" y="385" width="65" height="42"/>
@@ -658,6 +671,9 @@
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                         <state key="normal" title="CI"/>
+                                                                        <connections>
+                                                                            <action selector="addFreeBase:" destination="kPK-Jz-bCQ" eventType="touchUpInside" id="S9l-wL-Z8d"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>

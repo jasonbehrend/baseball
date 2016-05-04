@@ -18,6 +18,7 @@ class ShowStatsViewController: UIViewController {
     var batterNames = [String]()
     var currentBatter: Batter?
     
+    @IBOutlet weak var obpLabel: UILabel!
     @IBOutlet weak var slgLabel: UILabel!
     @IBOutlet weak var avgLabel: UILabel!
     @IBOutlet weak var singlesLabel: UILabel!
@@ -197,6 +198,7 @@ class ShowStatsViewController: UIViewController {
         homerunsLabel.text = String(batter.homeruns)
         avgLabel.text = batter.avg()
         slgLabel.text = batter.slg()
+        obpLabel.text = batter.obp()
 
 
         

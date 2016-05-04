@@ -16,7 +16,9 @@ let NEW_BATTER_STATS_DICT = [
     "doubles": 0,
     "triples": 0,
     "homeruns": 0,
-    "outs": 0
+    "outs": 0,
+    "freebases": 0,
+    "sacrafices": 0
 ]
 
 class DataService {

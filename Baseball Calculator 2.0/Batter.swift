@@ -15,6 +15,8 @@ class Batter {
     private var _triples: Int!
     private var _homeruns: Int!
     private var _outs: Int!
+    private var _freebases: Int!
+    private var _sacrafices: Int!
     
     var name: String {
         return _name
@@ -40,6 +42,14 @@ class Batter {
         return _outs
     }
     
+    var freebases: Int {
+        return _freebases
+    }
+    
+    var sacrafices: Int {
+        return _sacrafices
+    }
+    
     func addSingle() {
         self._singles = self._singles + 1
     }
@@ -58,6 +68,14 @@ class Batter {
     
     func addOut() {
         self._outs = self._outs + 1
+    }
+    
+    func addFreeBase() {
+        self._freebases = self._freebases + 1
+    }
+    
+    func addSacrafice() {
+        self._sacrafices = self._sacrafices + 1
     }
     
     func avg() -> String {
@@ -113,6 +131,38 @@ class Batter {
         }
     }
     
+    func obp() -> String {
+        let hits = Double(self._singles + self._doubles + self._triples + self._homeruns)
+        let outs = Double(self._outs)
+        let sacrafices = Double(self._sacrafices)
+        let freeBases = Double(self._freebases)
+        
+        let plateAppearances = hits + outs + sacrafices + freeBases
+        
+        print(plateAppearances)
+        
+        // format avg will always make avg 3 digits long
+        let formatter = NSNumberFormatter()
+        formatter.minimumFractionDigits = 3
+        
+        var obpWithoutPadding = 0.0
+        if plateAppearances != 0 {
+            obpWithoutPadding = (round(1000.0 * ((hits + freeBases) / (plateAppearances))) / 1000.0)
+            print("obpWitihoutPadding = \(obpWithoutPadding)")
+        }
+        
+        let obpWithPadding = formatter.stringFromNumber(obpWithoutPadding)
+        print("obpWithPadding = \(obpWithPadding)")
+        
+        if let obp = obpWithPadding {
+            return obp
+        }
+        
+        else {
+            return "0.000"
+        }
+    }
+    
     
     init(name: String, stats: Dictionary<String, AnyObject>) {
         self._name = name
@@ -137,6 +187,14 @@ class Batter {
             self._outs = outs
         }
         
+        if let freebases = stats["freebases"] as? Int {
+            self._freebases = freebases
+        }
+        
+        if let sacrafices = stats["sacrafices"] as? Int {
+            self._sacrafices = sacrafices
+        }
+        
     }
     
     init(name: String) {
@@ -147,6 +205,9 @@ class Batter {
         self._triples = 0
         self._homeruns = 0
         self._outs = 0
+        self._freebases = 0
+        self._sacrafices = 0
+        
     }
     
 }

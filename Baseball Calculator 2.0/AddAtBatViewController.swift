@@ -126,6 +126,44 @@ class AddAtBatViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
         
     }
+    
+    @IBAction func addFreeBase(sender: AnyObject) {
+        
+        if let currentBatter = batter {
+            
+            if let key = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String {
+                
+                DataService.ds.REF_USERS.childByAppendingPath(key).childByAppendingPath("Batters").childByAppendingPath(currentBatter.name).childByAppendingPath("freebases").setValue(currentBatter.freebases + 1)
+                
+                currentBatter.addFreeBase()
+                print("There are \(currentBatter.freebases) free bases")
+                
+            }
+            
+        }
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+
+    @IBAction func addSacrafice(sender: AnyObject) {
+        
+        if let currentBatter = batter {
+            
+            if let key = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String {
+                
+                DataService.ds.REF_USERS.childByAppendingPath(key).childByAppendingPath("Batters").childByAppendingPath(currentBatter.name).childByAppendingPath("sacrafices").setValue(currentBatter.sacrafices + 1)
+                
+                currentBatter.addFreeBase()
+                print("There are \(currentBatter.sacrafices) sacrafices")
+                
+            }
+            
+        }
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
 
     
     // TODO: make similar functions for addDouble, addTriple, etc, etc
